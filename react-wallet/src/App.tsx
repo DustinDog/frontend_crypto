@@ -14,12 +14,14 @@ import {
   TorusWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { FC, ReactNode, useMemo } from "react";
-import "./App.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
 
 import SenOnelamport from "./SenOnelamport";
+import Header from "./components/Header";
+
+
 
 function App() {
   return (
@@ -33,12 +35,12 @@ export default App;
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
   const network = WalletAdapterNetwork.Testnet;
+  const endpoint = clusterApiUrl(network);
 
-  // const endpoint = clusterApiUrl(network);
-
-  const endpoint = "https://tame-wiser-slug.solana-mainnet.quiknode.pro/00fe9d223ec874bd9d4ea1ef268bbd73c71dd5a1/"
-
-  console.log(endpoint, "endpoint");
+  // Mainnet ->
+  // const endpoint = "https://tame-wiser-slug.solana-mainnet.quiknode.pro/00fe9d223ec874bd9d4ea1ef268bbd73c71dd5a1/"
+  // Testnet ->
+  // const endpoint = "https://bold-proportionate-glitter.solana-testnet.quiknode.pro/9801f3d77005514ad278d3765b9451b393af2f2e/"
 
   const wallets = useMemo(
     () => [
@@ -62,9 +64,10 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
 
 const Content: FC = () => {
   return (
-    <div className="App">
-      <WalletMultiButton />
-      <SenOnelamport />
+    <div>
+      <Header />
+      {/* <WalletMultiButton /> */}
+      {/* <SenOnelamport /> */}
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import { Connection } from "@solana/web3.js";
+import { Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { PublicKey } from "@solana/web3.js";
-import { Transaction } from "@solana/web3.js";
 
 function AirDropButton({
     publicKey,
@@ -10,8 +9,18 @@ function AirDropButton({
     connection: Connection;
     }) {
     const send_airdrop = async () => {
-        const signature = await connection.requestAirdrop(publicKey, 1_000_000);
-        alert(`successfully send ${signature}`);
+        const signature = await connection.requestAirdrop(publicKey, LAMPORTS_PER_SOL);
+        const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
+        // 3 - Confirm transaction success
+        await connection.confirmTransaction({
+            blockhash,
+            lastValidBlockHeight,
+            signature
+        },'finalized');
+        // 4 - Log results
+        console.log(`Tx Complete: https://explorer.solana.com/tx/${signature}?cluster=devnet`)
+
+
     };
     
     return (
