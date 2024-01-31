@@ -5,24 +5,29 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          "100": "#929292",
-          "200": "#001715",
+          100: "#929292",
+          200: "#001715",
         },
         white: "#fff",
+        button_text: "#A4FFEB",
         aquamarine: {
-          "100": "#3affc4",
-          "200": "#36f2bc",
+          100: "#3affc4",
+          200: "#36f2bc",
         },
         paleturquoise: "#a4ffeb",
+
         seagreen: {
-          "100": "rgba(1, 98, 69, 0.2)",
-          "200": "rgba(38, 135, 107, 0.8)",
-          "300": "rgba(1, 98, 69, 0.8)",
+          100: "rgba(1, 98, 69, 0.2)",
+          200: "rgba(38, 135, 107, 0.8)",
+          300: "rgba(1, 98, 69, 0.8)",
         },
         mediumaquamarine: "#8ae6d1",
+        bggreen: "#049F88",
       },
       spacing: {},
       fontFamily: {
+        goldman: ["Goldman", "sans-serif"],
+
         "ibm-plex-sans": "'IBM Plex Sans'",
         goldman: "Goldman",
         "ibm-plex-sans-hebrew": "'IBM Plex Sans Hebrew'",
@@ -52,6 +57,9 @@ module.exports = {
       mq450: {
         raw: "screen and (max-width: 450px)",
       },
+    },
+    scale: {
+      "-100": "-1",
     },
   },
   corePlugins: {

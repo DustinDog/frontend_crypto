@@ -20,13 +20,17 @@ import { clusterApiUrl } from "@solana/web3.js";
 
 import SenOnelamport from "./SenOnelamport";
 import Header from "./components/Header";
-
-
+import MainPage from "./components/MainPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutPage from "./pages/Aboutpage";
+import Faqpage from "./pages/Faqpage";
 
 function App() {
   return (
     <Context>
-      <Content />
+      <BrowserRouter>
+        <Content />
+      </BrowserRouter>
     </Context>
   );
 }
@@ -64,10 +68,14 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
 
 const Content: FC = () => {
   return (
-    <div>
+    <>
       <Header />
-      {/* <WalletMultiButton /> */}
-      {/* <SenOnelamport /> */}
-    </div>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/cinema" element={<AboutPage />} />
+        <Route path="/howto" element={<MainPage />} />
+        <Route path="/faq" element={<Faqpage />} />
+      </Routes>
+    </>
   );
 };
