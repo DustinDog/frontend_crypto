@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Plus from "../media/plus.svg";
 
 const FaqAccordion = ({ headText, subText }) => {
   const [isOpen, setIsOpen] = useState(false);

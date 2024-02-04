@@ -1,7 +1,7 @@
 import DefaultButton from "./DefaultButton";
 import logo from "../media/logo.svg";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AboutPage from "../pages/Aboutpage";
+import AboutPage from "../pages/Tickets";
 import HomePage from "../pages/HomePage";
 import MainPage from "./MainPage";
 

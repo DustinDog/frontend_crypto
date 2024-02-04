@@ -22,7 +22,7 @@ import SenOnelamport from "./SenOnelamport";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AboutPage from "./pages/Aboutpage";
+import Tickets from "./pages/Tickets";
 import Faqpage from "./pages/Faqpage";
 
 function App() {
@@ -72,7 +72,7 @@ const Content: FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/cinema" element={<AboutPage />} />
+        <Route path="/cinema" element={<Tickets />} />
         <Route path="/howto" element={<MainPage />} />
         <Route path="/faq" element={<Faqpage />} />
       </Routes>
