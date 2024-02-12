@@ -1,19 +1,13 @@
 import { Link } from "react-router-dom";
 import bg1 from "../media/tickets1bg.svg";
-import mid1 from "../media/mid1.svg";
-import mid2 from "../media/mid2.svg";
+import mid_bg from "../media/mid_bg.png";
 
-import nnew from "../media/nnew.jpeg";
 import ClosedCurtainTicket from "../components/ClosedCurtainTicket";
+import OpenCurtains from "../components/OpenedCurtains";
 
 function Tickets() {
   return (
-    <div
-      style={{
-        maxWidth: "100%",
-        // overflowX: "hidden",
-      }}
-    >
+    <div style={{}}>
       <div
         className="bg-cover"
         style={{
@@ -103,7 +97,9 @@ function Tickets() {
           height: "2000px",
           display: "flex",
           flexDirection: "column",
-          background: "#022f29f",
+          backgroundImage: `url(${mid_bg})`,
+          // background: "#ffffff",
+          // background: "linear-gradient(#001816,#001A18)",
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -120,7 +116,6 @@ function Tickets() {
             style={{
               display: "flex",
               flexDirection: "column",
-              // paddingTop: "20px",
             }}
           >
             <div
@@ -130,8 +125,8 @@ function Tickets() {
                 gap: "50px",
               }}
             >
-              <ClosedCurtainTicket />
-              <ClosedCurtainTicket />
+              <OpenCurtains />
+              <OpenCurtains is_opened={false} />
               <ClosedCurtainTicket />
             </div>
             <div

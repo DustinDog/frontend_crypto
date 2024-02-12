@@ -1,12 +1,13 @@
 import React from 'react';
 import priceIcon from "../media/priceIcon.svg";
 import closed from "../media/closedCurtain.svg";
+import light_closed from "../media/light_closed_curtain.png";
 
 const ClosedCurtainTicket = () => {
     return (
       <div
           style={{
-            width: "300px",
+            width: "350px",
             height: "300px",
             padding: "6px",
             borderRadius: "15px",

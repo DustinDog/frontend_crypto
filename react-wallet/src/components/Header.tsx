@@ -1,9 +1,9 @@
+import "./header.css";
+
 import DefaultButton from "./DefaultButton";
 import logo from "../media/logo.svg";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AboutPage from "../pages/Tickets";
-import HomePage from "../pages/HomePage";
-import MainPage from "./MainPage";
+import { Link } from "react-router-dom";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const Header = () => {
   return (
@@ -35,11 +35,7 @@ const Header = () => {
             FAQ
           </div>
         </Link>
-        <button className="cursor-pointer px-[22px] py-[11px] bg-seagreen-300 flex-1 rounded-[12.64px] [backdrop-filter:blur(55.81px)] box-border overflow-hidden flex flex-row items-center justify-center min-w-[123px] whitespace-nowrap z-[7] border-[3.8px] border-solid border-paleturquoise hover:bg-seagreen-200 hover:box-border hover:border-[3.8px] hover:border-solid hover:border-mediumaquamarine">
-          <div className="h-[27px] relative text-2xl font-medium font-ibm-plex-sans text-paleturquoise text-left inline-block">
-            Connect wallet{" "}
-          </div>
-        </button>
+        <WalletMultiButton />
       </nav>
     </div>
   );
